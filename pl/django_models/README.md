@@ -128,7 +128,7 @@ Otwórz plik `blog/models.py`, usuń z niego całą zawartość i napisz taki ko
 
 Wygląda przerażająco, co? Ale nie martw się, wyjaśnimy o co chodzi linijka po linijce!
 
-Wszystkie wiersze zaczynające się od `from` lub `import` są wierszami dodającymi jakieś elementy z innych plików. Czyli zamiast kopiowania i wklejania tych samych treści w każdym pliku, możemy po prostu zawrzeć ich fragmenty za pomocą `from ... import ...`.
+Wszystkie wiersze zaczynające się od `from` lub `import` są wierszami dodającymi jakieś elementy z innych plików. Czyli zamiast kopiowania i wklejania tych samych treści w każdym pliku, możemy po prostu zawrzeć ich fragmenty za pomocą `from blog... import ...`.
 
 `class Post(models.Model):` - ta linijka definiuje nasz model (jest on obiektem, czyli `object`).
 

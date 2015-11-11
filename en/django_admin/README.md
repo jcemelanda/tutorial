@@ -6,7 +6,7 @@ Let's open the `blog/admin.py` file and replace its content with this:
 
 ```python
 from django.contrib import admin
-from .models import Post
+from blog.models import Post
 
 admin.site.register(Post)
 ```
@@ -39,5 +39,3 @@ Make sure that at least two or three posts (but not all) have the publish date s
 If you want to know more about Django admin, you should check Django's documentation: https://docs.djangoproject.com/en/1.8/ref/contrib/admin/
 
 This is probably a good moment to grab a coffee (or tea) or something to eat to re-energise yourself. You created your first Django model - you deserve a little timeout!
-
-

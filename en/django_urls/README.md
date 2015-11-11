@@ -94,7 +94,7 @@ Create a new `blog/urls.py` empty file. All right! Add these two first lines:
 
 ```python
 from django.conf.urls import url
-from . import views
+from blog import views
 ```
 
 Here we're importing Django's function `url` and all of our `views` from `blog` application (we don't have any yet, but we will get to that in a minute!)

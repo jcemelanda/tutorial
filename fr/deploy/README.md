@@ -93,7 +93,7 @@ il va aussi falloir modifier le fichier `settings.py` de notre site web. Pour ce
 Toujours à la fin du fichier `mysite/settings.py`, copier-coller ceci:
 
     try:
-        from .local_settings import *
+        from blog.local_settings import *
     except ImportError:
         pass
     

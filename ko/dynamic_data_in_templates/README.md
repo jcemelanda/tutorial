@@ -15,11 +15,11 @@
         return render(request, 'blog/post_list.html', {})
 ```
 
-다른 파일들에 있는 코드를 가져오는 것에 대해서 이야기 했던거 기억나나요? 이제 `models.py` 파일에서 정의한 모델을 가져올 때입니다. 이제 `from .models import Post` 행을 추가해 봅시다. 아래와 같을 거에요. :
+다른 파일들에 있는 코드를 가져오는 것에 대해서 이야기 했던거 기억나나요? 이제 `models.py` 파일에서 정의한 모델을 가져올 때입니다. 이제 `from blog.models import Post` 행을 추가해 봅시다. 아래와 같을 거에요. :
 
 ```python
     from django.shortcuts import render
-    from .models import Post
+    from blog.models import Post
 ```
 
 `from` 다음에 있는 마침표(.)는 *현재 디렉토리* 또는* 현재 어플리케이션*을 의미합니다. `views.py`와 `models.py` 파일들이 같은 디렉토리에 있기 때문에 우리는 `.`와 (`.py` 확장자를 붙이지 않아도) 파일의 이름만으로도 쉽게 사용할 수 있습니다. 자 다음은 모델(`Post`)의 이름을 불러옵니다.).
@@ -43,7 +43,7 @@
 ```python
     from django.shortcuts import render
     from django.utils import timezone
-    from .models import Post
+    from blog.models import Post
 
     def post_list(request):
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -63,7 +63,7 @@
 ```python
     from django.shortcuts import render
     from django.utils import timezone
-    from .models import Post
+    from blog.models import Post
 
     def post_list(request):
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')

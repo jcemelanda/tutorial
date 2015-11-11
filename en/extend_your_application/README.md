@@ -52,7 +52,7 @@ Let's make a URL in the `blog/urls.py` file to point Django to a *view* named `p
 
 ```python
 from django.conf.urls import include, url
-from . import views
+from blog import views
 
 urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),

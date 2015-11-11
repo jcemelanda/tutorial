@@ -69,7 +69,7 @@ Od tej pory Django przekieruje wszystkie reguły z adresu http://127.0.0.1:8000/
 Stwórz nowy pusty plik `blog/urls.py`. W porządku! Teraz dodaj dwie pierwsze linijki:
 
     from django.conf.urls import include, url
-    from . import views
+    from blog import views
 
 
 Tutaj po prostu importujemy metody Django oraz wszystkie widoki (`views`) z naszej aplikacji `blog` (jeszcze nie mamy żadnych, ale dojdziemy do tego za chwilkę!)

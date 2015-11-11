@@ -15,11 +15,11 @@ Necesitamos abrir nuestro archivo `blog/views.py`. Hasta ahora la *view* `post_l
         return render(request, 'blog/post_list.html', {})
 ```
 
-¿Recuerdas cuando hablamos de incluir código en diferentes archivos? Ahora tenemos que incluir el modelo que definimos en el archivo `models.py`. Agregaremos la línea `from .models import Post` de la siguiente forma:
+¿Recuerdas cuando hablamos de incluir código en diferentes archivos? Ahora tenemos que incluir el modelo que definimos en el archivo `models.py`. Agregaremos la línea `from blog.models import Post` de la siguiente forma:
 
 ```python
     from django.shortcuts import render
-    from .models import Post
+    from blog.models import Post
 ```
 
 El punto después de `from` indica el *directorio actual* o la *aplicación actual*. Como `views.py` y `models.py` están en el mismo directorio, simplemente usamos `.` y el nombre del archivo (sin `.py`). Ahora importamos el nombre del modelo (`Post`).
@@ -42,7 +42,7 @@ Ahora pondremos este bloque de código en el archivo `blog/views.py`, agregándo
 ```python
     from django.shortcuts import render
     from django.utils import timezone
-    from .models import Post
+    from blog.models import Post
     
     def post_list(request):
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -60,7 +60,7 @@ Finalmente nuestro archivo `blog/views.py` debería verse así:
 ```python
     from django.shortcuts import render
     from django.utils import timezone
-    from .models import Post
+    from blog.models import Post
     
     def post_list(request):
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')

@@ -19,7 +19,7 @@ Ok, vamos abri-lo e escrever nele o seguinte:
 ```python
 from django import forms
 
-from .models import Post
+from blog.models import Post
 
 class PostForm(forms.ModelForm):
 
@@ -29,7 +29,7 @@ class PostForm(forms.ModelForm):
 ```
 
 
-Primeiro precisamos importar o módulo de formulários do Django (`from django import forms`) e, obviamente, nosso modelo `Post` (`from .models import Post`).
+Primeiro precisamos importar o módulo de formulários do Django (`from django import forms`) e, obviamente, nosso modelo `Post` (`from blog.models import Post`).
 
 `PostForm`, como você já deve suspeitar, é o nome do nosso formulário. Precisamos dizer ao Django que este formulário é um `ModelForm` (assim o Django pode fazer a mágica pra gente) - o `forms.ModelForm` é o responsável por isso.
 
@@ -94,7 +94,7 @@ O código final deve se parecer com isso:
 
 ``` python
 from django.conf.urls import include, url
-from . mport views
+from blog mport views
 
 urlpatterns = [
     url(r'^$', views.post_list),
@@ -110,7 +110,7 @@ Após recarregar o site, nós veremos um `AttributeError`, desde que nós não t
 Hora de abrir o arquivo `blog/views.py` e adicionar as linhas seguintes com o resto das linhas `from`:
 
 ``` python
-from .forms import PostForm
+from blog.forms import PostForm
 ```
 
 e nossa *view*:

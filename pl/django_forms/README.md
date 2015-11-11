@@ -18,7 +18,7 @@ Dobrze, a teraz otwórzmy go i wprowadźmy następujący kod:
 
     from django import forms
 
-    from .models import Post
+    from blog.models import Post
 
     class PostForm(forms.ModelForm):
 
@@ -27,7 +27,7 @@ Dobrze, a teraz otwórzmy go i wprowadźmy następujący kod:
             fields = ('title', 'text',)
 
 
-Musimy najpierw zaimportować formularze Django (`from django import forms`) oraz, naturalnie, nasz model wpisu (`from .models import Post`).
+Musimy najpierw zaimportować formularze Django (`from django import forms`) oraz, naturalnie, nasz model wpisu (`from blog.models import Post`).
 
 `PostForm`, jak zapewne podejrzewasz, to nazwa naszego formularza. Musimy poinformować Django, że ten formularz jest  formularzem modelu (`ModelForm`), dzięki czemu Django wyręczy nas w pewnych czynnościach - właśnie za to odpowiada `forms.ModelForm`.
 
@@ -91,7 +91,7 @@ Otwieramy plik `blog/urls.py` i dodajemy wiersz:
 Ostatecznie kod będzie wyglądał tak:
 
     from django.conf.urls import include, url
-    from . import views
+    from blog import views
 
     urlpatterns = [
         url(r'^$', views.post_list),
@@ -106,7 +106,7 @@ Po odświeżeniu strony zobaczymy błąd `AttributeError`, ponieważ nie mamy je
 
 Czas otworzyć plik `blog/views.py` i dodać poniższe linijki obok innych wierszy z `from`:
 
-    from .forms import PostForm
+    from blog.forms import PostForm
 
 
 no i nasz *widok*:

@@ -54,7 +54,7 @@ http://127.0.0.1:8000/를 열어보세요. 오류 메세지가 나올 거에요.
 
 ```python
 from django.conf.urls import include, url
-from . import views
+from blog import views
 
 urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),

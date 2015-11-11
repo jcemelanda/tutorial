@@ -5,7 +5,7 @@
 이제 `blog/admin.py` 파일을 열어서 내용을 다음과 같이 바꾸세요. :
 
     from django.contrib import admin
-    from .models import Post
+    from blog.models import Post
 
     admin.site.register(Post)
 

@@ -20,7 +20,7 @@
 ```python
     from django import forms
 
-    from .models import Post
+    from blog.models import Post
 
     class PostForm(forms.ModelForm):
 
@@ -29,7 +29,7 @@
             fields = ('title', 'text',)
 ```
 
-Для начала нам нужно импортировать формы Django (`from django import forms`) и, разумеется, нашу модель `Post` (`from .models import Post`).
+Для начала нам нужно импортировать формы Django (`from django import forms`) и, разумеется, нашу модель `Post` (`from blog.models import Post`).
 
 `PostForm`, как ты, вероятно, подозреваешь, это имя для нашей формы. Нам нужно также сообщить Django, что эта форма относится к `ModelForm` (чтобы он смог поколдовать для нас) - `forms.ModelForm` поможет с этим.
 
@@ -96,7 +96,7 @@
 
 ```python
     from django.conf.urls import include, url
-    from . import views
+    from blog import views
 
     urlpatterns = [
         url(r'^$', views.post_list, name='post_list'),
@@ -112,7 +112,7 @@
 Самое время открыть файл `blog/views.py` и добавить следующую строку к остальным, начинающимся с `from`:
 
 ```python
-    from .forms import PostForm
+    from blog.forms import PostForm
 ```
 
 и наше *представление*:

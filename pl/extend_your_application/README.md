@@ -51,7 +51,7 @@ Dodajmy adres URL w pliku `urls.py` dla naszego *widoku* `post_detail`!
 Potrzebujemy stworzyć adres URL wskazujący na *widok* o nazwie `post_detail`, który wyświetli nam cały wpis. Dodaj wiersz `url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail),` w pliku `blog/urls.py`. Powinna wyglądać tak:
 
     from django.conf.urls import include, url
-    from . import views
+    from blog import views
 
     urlpatterns = [
         url(r'^$', views.post_list),

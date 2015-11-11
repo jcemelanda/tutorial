@@ -58,7 +58,7 @@ Allons créer notre URL dans le fichier `urls.py` pour notre *vue* `post_detail`
 Nous voulons crer une URL pour pointer Django vers une *vue* appelée `post_detail`, ce qui nous permettra d'afficher l'intégralité d'un blog post. Ajoutez la ligne `url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail),` au fichier `blog/urls.py`. Ça devrait ressembler à ceci:
 
     from django.conf.urls import patterns, include, url
-    from . import views
+    from blog import views
     
     urlpatterns = patterns('',
         url(r'^$', views.post_list),

@@ -15,11 +15,11 @@ def post_list(request):
     return render(request, 'blog/post_list.html', {})
 ```
 
-Lembra quando falamos sobre a inclusão de código escrito em arquivos diferentes? Agora é o momento em que temos de incluir o model que temos escrito em `models.py`. Vamos adicionar esta linha `from .models import Post` como este:
+Lembra quando falamos sobre a inclusão de código escrito em arquivos diferentes? Agora é o momento em que temos de incluir o model que temos escrito em `models.py`. Vamos adicionar esta linha `from blog.models import Post` como este:
 
 ```python
 from django.shortcuts import render
-from .models import Post
+from blog.models import Post
 ```
 
 O ponto depois de `from` significa o *diretório atual* ou o *aplicativo atual*. Como `views.py` e `models.py` estão no mesmo diretório podemos simplesmente usar `.` e o nome do arquivo (sem `.py`). Então nós importamos o nome do modelo (`Post`).
@@ -40,7 +40,7 @@ Agora nós colocamos este pedaço de código dentro do arquivo `blog/views.py` a
 ```python
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Post
+from blog.models import Post
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -58,7 +58,7 @@ Então finalmente nosso arquivo `blog/views.py` deve se parecer com isto:
 ```python
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Post
+from blog.models import Post
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')

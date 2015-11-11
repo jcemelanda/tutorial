@@ -92,7 +92,7 @@ URL은 단순히 웹 주소랍니다. 웹사이트를 방문할 때마다 URL을
 `blog/urls.py`이라는 새 파일을 생성하세요. 좋아요! 이제 다음 두 줄을 추가하세요.
 
     from django.conf.urls import url
-    from . import views
+    from blog import views
 
 
 우리는 장고의 메소드와 `blog` 어플리케이션에서 사용할 모든 `views`들을 불러오고 있어요. (물론 아직 뷰를 하나도 안 만들었지만, 곧 만들거니 조금만 기다리세요!)

@@ -95,7 +95,7 @@ Crea un nuevo archivo vacío `blog/urls.py`. ¡Muy bien! Agrega estas primeras d
 
 ``` python
     from django.conf.urls import include, url
-    from . import views
+    from blog import views
 ```
 
 Aquí solo estamos importando los métodos de Django y todas nuestras `views` del `blog` (todavía no tenemos ninguna, pero lo haremos en un minuto)

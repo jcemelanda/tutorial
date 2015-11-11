@@ -90,7 +90,7 @@ Kolejną rzeczą, którą musimy wykonać, to zmodyfikowanie pliku `settings.py`
     DEBUG = False
 
     try:
-        from .local_settings import *
+        from blog.local_settings import *
     except ImportError:
         pass
 

@@ -71,7 +71,7 @@ Django va maintenant rediriger tout ce qui arrive sur `http://127.0.0.1:8000/` v
 Créez un fichier appelé `blog/urls.py`. Ajoutez ces deux lignes au début de votre nouveau fichier:
 
     from django.conf.urls import patterns, include, url
-    from . import views
+    from blog import views
     
 
 Ici, nous ne faisons qu'importer les méthodes Django dont nous avons besoin ainsi que toutes les `vues` liées à notre application `blog`. Mais nous n'avons pas encore créé de vues! Pas de problème: nous y viendrons dans une minute!

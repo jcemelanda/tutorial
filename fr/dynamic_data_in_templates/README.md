@@ -14,10 +14,10 @@ Nous allons avoir besoin d'ouvrir le fichier `blog/views.py`. Pour l'instant, la
         return render(request, 'blog/post_list.html', {})
     
 
-Est-ce que vous vous souvenez de comment rajouter des morceaux de code écris dans d'autres fichiers? Nous en avons parlé dans un chapitre précédent. Nous allons devoir importer notre modèle qui est défini dans le fichier `models.py`. Pour cela, nous allons ajouter la ligne `from .models import Post` de la façon suivante:
+Est-ce que vous vous souvenez de comment rajouter des morceaux de code écris dans d'autres fichiers? Nous en avons parlé dans un chapitre précédent. Nous allons devoir importer notre modèle qui est défini dans le fichier `models.py`. Pour cela, nous allons ajouter la ligne `from blog.models import Post` de la façon suivante:
 
     from django.shortcuts import render
-    from .models import Post
+    from blog.models import Post
     
 
 Le point après `from` signifie le *dossier courant* ou *l'application courante*. Comme `views.py` et `models.py` sont dans le même dossier, nous pouvons tout simplement utiliser `.` et le nom du fichier, sans le `.py`. Ensuite, nous importons le modèle (`Post`).
@@ -38,7 +38,7 @@ Maintenant, nous allons nous intéresser à une liste de blog posts qui sont pub
 Il ne nous reste plus qu'à mettre cette ligne de code à l'intérieur de notre fichier `blog/views.py`, dans la fonction `def post_list(request)`:
 
     from django.shortcuts import render
-    from .models import Post
+    from blog.models import Post
     
     def post_list(request):
         posts = Post.objects.filter(published_date__isnull=False).order_by('published_date')
@@ -54,7 +54,7 @@ Dans la fonction `render`, nous avons déjà un paramètre `request`, qui désig
 Au final, notre fichier `blog/views.py` doit ressembler à ceci maintenant:
 
     from django.shortcuts import render
-    from .models import Post
+    from blog.models import Post
     
     def post_list(request):
         posts = Post.objects.filter(published_date__isnull=False).order_by('published_date')

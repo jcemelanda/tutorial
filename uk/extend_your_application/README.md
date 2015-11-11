@@ -51,7 +51,7 @@
 Ми бажаємо створити URL щоб направляти Django до відображення, що називається `post_detail`, що в свою чергу має відобразити введений пост. Додамо рядок `url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail),` у файл `blog/urls.py`. Це буде виглядати наступним чином:
 
     from django.conf.urls import include, url
-    from . import views
+    from blog import views
     
     urlpatterns = [
         url(r'^$', views.post_list),

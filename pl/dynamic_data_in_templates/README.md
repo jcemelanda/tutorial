@@ -14,10 +14,10 @@ Musimy otworzyć nasz plik `blog/views.py`. Jak dotąd *widok* `post_list` wygl�
         return render(request, 'blog/post_list.html', {})
     
 
-Pamiętasz, jak rozmawiałyśmy o dołączaniu kodu zapisanego w odrębnych plikach? Teraz jest przyszedł czas na dołączenie modelu, który napisałyśmy wcześniej w `models.py`. Dodajmy wiersz `from .models import Post` w następujący sposób:
+Pamiętasz, jak rozmawiałyśmy o dołączaniu kodu zapisanego w odrębnych plikach? Teraz jest przyszedł czas na dołączenie modelu, który napisałyśmy wcześniej w `models.py`. Dodajmy wiersz `from blog.models import Post` w następujący sposób:
 
     from django.shortcuts import render
-    from .models import Post
+    from blog.models import Post
     
 
 Kropka po `from` oznacza *bieżący katalog* lub *biężącą aplikację*. Jako że pliki `views.py` i `models.py` są w tym katalogu, możemy użyć po prostu `.` i nazwy pliku (bez `.py`). Następnie importujemy nazwę modelu (`Post`).
@@ -39,7 +39,7 @@ Teraz umieśćmy ten kod wewnątrz pliku `blog/views.py` poprzez dodanie go do f
 
     from django.shortcuts import render
     from django.utils import timezone
-    from .models import Post
+    from blog.models import Post
     
     def post_list(request):
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -56,7 +56,7 @@ Zatem ostatecznie nasz plik `blog/views.py` powinien wyglądać następująco:
 
     from django.shortcuts import render
     from django.utils import timezone
-    from .models import Post
+    from blog.models import Post
     
     def post_list(request):
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')

@@ -52,7 +52,7 @@ Queremos criar uma URL para guiar o Django para a *view* chamada `post_detail`, 
     
 ```python
 from django.conf.urls import include, url
-from . import views
+from blog import views
 
 urlpatterns = [
     url(r'^$', views.post_list),

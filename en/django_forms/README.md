@@ -18,7 +18,7 @@ Ok, let's open it and type the following code:
 ```python
 from django import forms
 
-from .models import Post
+from blog.models import Post
 
 class PostForm(forms.ModelForm):
 
@@ -27,7 +27,7 @@ class PostForm(forms.ModelForm):
         fields = ('title', 'text',)
 ```
 
-We need to import Django forms first (`from django import forms`) and, obviously, our `Post` model (`from .models import Post`).
+We need to import Django forms first (`from django import forms`) and, obviously, our `Post` model (`from blog.models import Post`).
 
 `PostForm`, as you probably suspect, is the name of our form. We need to tell Django, that this form is a `ModelForm` (so Django will do some magic for us) - `forms.ModelForm` is responsible for that.
 
@@ -92,7 +92,7 @@ And the final code will look like this:
 
 ```python
 from django.conf.urls import include, url
-from . import views
+from blog import views
 
 urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
@@ -108,7 +108,7 @@ After refreshing the site, we see an `AttributeError`, since we don't have `post
 Time to open the `blog/views.py` file and add the following lines with the rest of the `from` rows:
 
 ```python
-from .forms import PostForm
+from blog.forms import PostForm
 ```
 
 and our *view*:

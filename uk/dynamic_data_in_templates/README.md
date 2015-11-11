@@ -14,10 +14,10 @@
         return render(request, 'blog/post_list.html', {})
     
 
-Пам'ятаєте як ми говорили про включення коду написаного в різних файлах? Тепер настав момент, коли ми повинні включити модель написану в `models.py`. Додаймо рядок `from .models import Post`:
+Пам'ятаєте як ми говорили про включення коду написаного в різних файлах? Тепер настав момент, коли ми повинні включити модель написану в `models.py`. Додаймо рядок `from blog.models import Post`:
 
     from django.shortcuts import render
-    from .models import Post
+    from blog.models import Post
     
 
 Крапка після `from` означає *поточна директорія* або *поточний додаток*. Оскільки `views.py` і `models.py` розташовані в одній і тій же папці, можемо просто використовувати `.` і ім'я файлу (без `.py`). Далі імпортуємо ім'я моделі (`Post`).
@@ -39,7 +39,7 @@
 
     from django.shortcuts import render
     from django.utils import timezone
-    from .models import Post
+    from blog.models import Post
     
     def post_list(request):
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -56,7 +56,7 @@
 
     from django.shortcuts import render
     from django.utils import timezone
-    from .models import Post
+    from blog.models import Post
     
     def post_list(request):
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')

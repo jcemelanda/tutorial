@@ -19,7 +19,7 @@
 ```python
 from django import forms
 
-from .models import Post
+from blog.models import Post
 
 class PostForm(forms.ModelForm):
 
@@ -28,7 +28,7 @@ class PostForm(forms.ModelForm):
         fields = ('title', 'text',)
 ```
 
-위 코드를 보면 첫 번째로 forms model을 import 해야하고 (`from django import forms`), 그 다음으로 `Post` model 도 import 해야합니다. (`from .models import Post`).
+위 코드를 보면 첫 번째로 forms model을 import 해야하고 (`from django import forms`), 그 다음으로 `Post` model 도 import 해야합니다. (`from blog.models import Post`).
 
 `PostForm` 은 이미 다들 예상 하셨듯이 우리가 만들 폼의 이름이에요. 그리고 장고에게 이 폼이 `ModelForm`이라는 것을 알려줘야해요. (그러면 장고가 뭔가 마술을 부릴 거에요) - `forms.ModelForm`은 ModelForm이라는 것을 알려주는 구문이에요.
 
@@ -93,7 +93,7 @@ class PostForm(forms.ModelForm):
 
 ```python
 from django.conf.urls import include, url
-from . import views
+from blog import views
 
 urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
@@ -109,7 +109,7 @@ urlpatterns = [
 `blog/views.py` 파일을 열어서 `from` 줄에 아래와 같은 코드를 추가합니다.
 
 ```python
-from .forms import PostForm
+from blog.forms import PostForm
 ```
 
 그리고 *view* 에 추가합니다.

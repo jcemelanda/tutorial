@@ -18,7 +18,7 @@ Ouvrons maintenant ce fichier et tapons le code suivant:
 
     from django import forms
     
-    from .models import Post
+    from blog.models import Post
     
     class PostForm(forms.ModelForm):
     
@@ -27,7 +27,7 @@ Ouvrons maintenant ce fichier et tapons le code suivant:
             fields = ('title', 'text',)
     
 
-Nous avons besoin tout d'abord d'importer les formulaires Django (`from django import forms`), puis, évidemment, nous avons besoin de notre modèle `Post` (`from .models import Post`).
+Nous avons besoin tout d'abord d'importer les formulaires Django (`from django import forms`), puis, évidemment, nous avons besoin de notre modèle `Post` (`from blog.models import Post`).
 
 Comme vous l'avez probablement deviné, `PostForm` est le nom de notre formulaire. Nous avons besoin de préciser à Django que ce formulaire est un `ModelForm`. Nous utilisons `forms.ModelForm` pour cela.
 
@@ -92,7 +92,7 @@ Ouvrez le fichier `blog/urls.py` et ajoutez cette ligne:
 Votre fichier doit maintenant ressembler à ceci:
 
     from django.conf.urls import patterns, include, url
-    from . import views
+    from blog import views
     
     urlpatterns = patterns('',
         url(r'^$', views.post_list),
@@ -107,7 +107,7 @@ Une fois la page rechargée, vous allez voir une `AttributeError`, ce qui est no
 
 Ouvrons maintenant le fichier `blog/views.py` et ajoutez les lignes suivantes sous celles existantes:
 
-    from .forms import PostForm
+    from blog.forms import PostForm
     
 
 Puis ajoutez la *vue*:

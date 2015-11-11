@@ -128,7 +128,7 @@ Ouvrez le fichier `blog/models.py`, supprimez tout ce qui s'y trouve et copiez-y
 
 Ce gros morceau de code a l'air effrayant! Ne vous inquiétez pas, nous allons vous expliquer ce que signifie chacune de ces lignes!
 
-Toutes les lignes qui commencent par `from` ou `import` sont des lignes qui permettent d'importer des morceaux d'autres fichiers. Concrètement, au lieu de recopier ou de copier-coller la même chose dans différents fichiers, nous pouvons tout simplement faire référence à certains morceaux d'autres fichiers à l'aide de `from ... import ...`.
+Toutes les lignes qui commencent par `from` ou `import` sont des lignes qui permettent d'importer des morceaux d'autres fichiers. Concrètement, au lieu de recopier ou de copier-coller la même chose dans différents fichiers, nous pouvons tout simplement faire référence à certains morceaux d'autres fichiers à l'aide de `from blog... import ...`.
 
 `class Post(models.Model):` - C'est cette ligne qui permet de définir notre modèle. C'est un `object`).
 

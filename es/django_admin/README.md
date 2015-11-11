@@ -6,7 +6,7 @@ Vamos a abrir el archivo `blog/admin.py` y reemplazar su contenido con esto:
 
 ```python
     from django.contrib import admin
-    from .models import Post
+    from blog.models import Post
     
     admin.site.register(Post)
 ```

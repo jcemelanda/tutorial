@@ -18,7 +18,7 @@ Ok, відкриймо цей файл і наберемо наступний к
 
     from django import forms
     
-    from .models import Post
+    from blog.models import Post
     
     class PostForm(forms.ModelForm):
     
@@ -27,7 +27,7 @@ Ok, відкриймо цей файл і наберемо наступний к
             fields = ('title', 'text',)
     
 
-Спершу потрібно імпортувати Django форми (`from django import forms`) і, очевидно, нашу модель `Post` (`from .models import Post`).
+Спершу потрібно імпортувати Django форми (`from django import forms`) і, очевидно, нашу модель `Post` (`from blog.models import Post`).
 
 `PostForm`, як ви можливо зазначили, ім'я нашої форми. Ми маємо повідомити Django, що наша форма є `ModelForm` (таким чином Django здійснить для нас певні магічні маніпуляції) і рядок `forms.ModelForm` відповідає за це.
 
@@ -92,7 +92,7 @@ Ok, відкриймо цей файл і наберемо наступний к
 Остаточно код буде виглядати так:
 
     from django.conf.urls import include, url
-    from . import views
+    from blog import views
     
     urlpatterns = [
         url(r'^$', views.post_list),
@@ -107,7 +107,7 @@ Ok, відкриймо цей файл і наберемо наступний к
 
 Час відкрити файл `blog/views.py` і додати наступні рядки:
 
-    from .forms import PostForm
+    from blog.forms import PostForm
     
 
 і функцію для потрібного відображення:

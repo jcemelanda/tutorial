@@ -19,7 +19,7 @@ Ok, vamos abrirlo y vamos a escribir el siguiente código:
 ```python
     from django import forms
     
-    from .models import Post
+    from blog.models import Post
     
     class PostForm(forms.ModelForm):
     
@@ -28,7 +28,7 @@ Ok, vamos abrirlo y vamos a escribir el siguiente código:
             fields = ('title', 'text',)
 ```    
 
-Primero necesitamos importar Django forms (`from django import forms`) y, obviamente, nuestro modelo `Post` (`from .models import Post`).
+Primero necesitamos importar Django forms (`from django import forms`) y, obviamente, nuestro modelo `Post` (`from blog.models import Post`).
 
 `PostForm`, como probablemente sospechas, es el nombre del formulario. Necesitamos decirle a Django que este formulario es un `ModelForm` (así Django hará algo de magia para nosotros) - `forms.ModelForm` es responsable de ello.
 
@@ -93,7 +93,7 @@ Y el código final tendrá este aspecto:
 
 ```python
     from django.conf.urls import include, url
-    from . import views
+    from blog import views
     
     urlpatterns = [
         url(r'^$', views.post_list),
@@ -109,7 +109,7 @@ Después de actualizar el sitio, veremos un `AttributeError`, puesto que no tene
 Es el momento de abrir el archivo `blog/views.py` y agregar las siguientes líneas al resto de las filas `from`:
 
 ```python
-    from .forms import PostForm
+    from blog.forms import PostForm
 ```    
 
 y nuestra *vista*:

@@ -16,11 +16,11 @@ def post_list(request):
 ```
     
 
-Помнишь мы говорили о включении кода из других файлов? Теперь нам нужно включить модель, которую мы определили в файле `models.py`. Мы добавим строку `from .models import Post` следующим образом:
+Помнишь мы говорили о включении кода из других файлов? Теперь нам нужно включить модель, которую мы определили в файле `models.py`. Мы добавим строку `from blog.models import Post` следующим образом:
 
 ```python
 from django.shortcuts import render
-from .models import Post
+from blog.models import Post
 ```
     
 
@@ -44,7 +44,7 @@ from .models import Post
 ```python
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Post
+from blog.models import Post
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -65,7 +65,7 @@ def post_list(request):
 ```python
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Post
+from blog.models import Post
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')

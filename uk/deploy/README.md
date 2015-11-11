@@ -93,7 +93,7 @@
 Вкінці `mysite/settings.py`, скопіюйте та вставте це:
 
     try:
-        from .local_settings import *
+        from blog.local_settings import *
     except ImportError:
         pass
     

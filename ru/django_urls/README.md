@@ -98,7 +98,7 @@ Django теперь будет перенаправлять все запрос�
 
 ```python
 from django.conf.urls import url
-from . import views
+from blog import views
 ```
     
 
